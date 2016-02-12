@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/pic_2"
+    android:id="@+id/r1">
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_circle"
+        android:id="@+id/M1"
+        android:text="1"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/M4"
+        android:layout_toEndOf="@+id/M4" />
+    <AbsoluteLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_circle"
+            android:id="@+id/M2"
+            android:text="2"
+            android:layout_x="65dp"
+            android:layout_y="225dp"
+            android:layout_above="@+id/M1"
+            android:layout_toRightOf="@+id/M3"
+            android:layout_toEndOf="@+id/M3" />
+
+        <AbsoluteLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_circle"
+                android:id="@+id/M6"
+                android:text="6"
+                android:layout_x="527dp"
+                android:layout_y="225dp"
+                />
+
+        </AbsoluteLayout>
+    </AbsoluteLayout>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_circle"
+        android:id="@+id/M3"
+        android:text="3"
+        android:layout_above="@+id/M4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_circle_bigger"
+        android:id="@+id/M4"
+        android:text="4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_circle"
+        android:id="@+id/M5"
+        android:text="5"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/MS"
+        android:layout_toStartOf="@+id/MS" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_circle"
+        android:id="@+id/M7"
+        android:text="7"
+        android:layout_above="@+id/MS"
+        android:layout_alignRight="@+id/MS"
+        android:layout_alignEnd="@+id/MS" />
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="S"
+        android:background="@drawable/bg_circle_bigger"
+        android:id="@+id/MS"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score:  "
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:id="@+id/textVIew_Score"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Songs "
+    android:textAllCaps="false"
+    android:textSize="20dp"
+    android:id="@+id/textView_Songs"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Online Songs"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:id="@+id/textView_Online"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>
