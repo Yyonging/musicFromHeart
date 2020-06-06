@@ -70,6 +70,7 @@ public class TrainMod extends AppCompatActivity implements View.OnClickListener 
     private   StringBuilder musicContent  =  new StringBuilder("");
     private  String jsonResponse;
     private  String fileName = "";
+    private String server="http://192.168.8.221:5000/"; //修改成你自己的服务器地址，实现相应的接口，服务器示范例子如Readme中所示
     Thread thread ;
     Handler handler = new Handler(){
         @Override
@@ -215,6 +216,7 @@ public class TrainMod extends AppCompatActivity implements View.OnClickListener 
             //设置listview
             if(jsonResponse != null && ! jsonResponse .equals("")) {
                 final String [] musicIndexArray;
+                Log.d("tag_duan", jsonResponse);
                 musicIndexArray = parseJSON(jsonResponse);
                 ArrayAdapter<String> array_adapter = new ArrayAdapter<String>(TrainMod.this,
                         android.R.layout.simple_dropdown_item_1line, musicIndexArray);
@@ -303,7 +305,7 @@ public class TrainMod extends AppCompatActivity implements View.OnClickListener 
             @Override
             public void run() {
                 try {
-                    URL url = new  URL("http://115.28.179.124/musicIndex.json");
+                    URL url = new  URL(server+"musicIndex");
                     HttpURLConnection connection =  (HttpURLConnection)url.openConnection();
                     connection.setRequestMethod("GET");
                     connection.setReadTimeout(4000);
@@ -357,7 +359,7 @@ public class TrainMod extends AppCompatActivity implements View.OnClickListener 
                   @Override
                   public void run() {
                       try {
-                          URL url = new URL("http://115.28.179.124/" + musicName+".html");
+                          URL url = new URL(server + musicName);
                           musicContent = new StringBuilder("");  //刷新掉原有的数据
                           HttpURLConnection connection = (HttpURLConnection)url.openConnection();
                           connection.setRequestMethod("GET");
@@ -388,11 +390,11 @@ public class TrainMod extends AppCompatActivity implements View.OnClickListener 
     Runnable runnable = new Runnable(){
         public void run() {
              String line = musicContent.toString();
-           // Log.d("tag_duan",musicContent.toString());
+            Log.d("tag_duan",musicContent.toString());
 
             char[] s = line.toCharArray();
             Log.d("tag_duan", s.length + "");
-         //   Log.d("tag_duan", Arrays.toString(s));
+//            Log.d("tag_duan", Arrays.toString(s));
 
       for (char m : s) {
           while (!STOP) {
